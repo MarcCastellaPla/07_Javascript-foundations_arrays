@@ -8,7 +8,7 @@ const initialAccumulatedValueAsZero = 0;
 const initialAccumulatedValueAsTen = 10;
 const initialAccumulatedValueAsOneHundred = 100;
 
-describe('sumNumbersFromInitialValue', () => {
+describe('Given sumNumbersFromInitialValue', () => {
   it('When the initial value is 0, Then it shoud return the correct sum', () => {
     // Arrange
     const expectedResult = 0;
