@@ -13,3 +13,16 @@
  * @param {string} fruit - The type of fruit to feed the monkeys.
  * @returns {string[]} An array of strings indicating each monkey has been fed with the specified fruit.
  */
+
+const feedMonkeys = function (monkeysList, fruit) {
+  const result = [];
+  if (fruit === undefined) {
+    return result;
+  }
+  for (let i = 0; i < monkeysList.length; i++) {
+    result.push(fruit + monkeysList[i]);
+  }
+  return result;
+};
+
+export default feedMonkeys;
