@@ -1,12 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import feedMonkeys from './feedMonkeys.js';
+import { feedMonkeys } from './feedMonkeys.js';
 const MONKEYS_LIST = ['🐒', '🦍', '🦧'];
 
 describe('Given feedMonkeys', () => {
   it('When the monkeys are fed with bananas, then all three monkeys should have a banana', () => {
     // Arrange
     const banana = '🍌';
-    const expectedResult = ['🍌🐒', '🍌🦍', '🍌🦧'];
+    const expectedResult = ['🐒🍌', '🦍🍌', '🦧🍌'];
 
     // Act
     const result = feedMonkeys(MONKEYS_LIST, banana);
@@ -18,7 +18,7 @@ describe('Given feedMonkeys', () => {
   it('When the monkeys are fed with apples, then all three monkeys should have an apple', () => {
     // Arrange
     const apple = '🍎';
-    const expectedResult = ['🍎🐒', '🍎🦍', '🍎🦧'];
+    const expectedResult = ['🐒🍎', '🦍🍎', '🦧🍎'];
 
     // Act
     const result = feedMonkeys(MONKEYS_LIST, apple);
@@ -30,7 +30,7 @@ describe('Given feedMonkeys', () => {
   it('When the monkeys are fed with grapes, then all three monkeys should have a grape', () => {
     // Arrange
     const grape = '🍇';
-    const expectedResult = ['🍇🐒', '🍇🦍', '🍇🦧'];
+    const expectedResult = ['🐒🍇', '🦍🍇', '🦧🍇'];
 
     // Act
     const result = feedMonkeys(MONKEYS_LIST, grape);
@@ -51,7 +51,7 @@ describe('Given feedMonkeys', () => {
   it('When the monkeys are fed with special characters as fruit, then the function should handle it without errors', () => {
     // Arrange
     const specialCharacters = '🍉🍇';
-    const expectedResult = ['🍉🍇🐒', '🍉🍇🦍', '🍉🍇🦧'];
+    const expectedResult = ['🐒🍉🍇', '🦍🍉🍇', '🦧🍉🍇'];
 
     // Act
     const result = feedMonkeys(MONKEYS_LIST, specialCharacters);

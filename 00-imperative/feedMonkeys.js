@@ -14,15 +14,13 @@
  * @returns {string[]} An array of strings indicating each monkey has been fed with the specified fruit.
  */
 
-const feedMonkeys = function (monkeysList, fruit) {
+export function feedMonkeys(monkeysList, fruit) {
   const result = [];
   if (fruit === undefined) {
     return result;
   }
   for (let i = 0; i < monkeysList.length; i++) {
-    result.push(fruit + monkeysList[i]);
+    result.push(monkeysList[i] + fruit);
   }
   return result;
-};
-
-export default feedMonkeys;
+}

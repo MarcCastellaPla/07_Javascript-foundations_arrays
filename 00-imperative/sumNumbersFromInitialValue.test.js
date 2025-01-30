@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import sumNumbersFromInitialValue from './sumNumbersFromInitialValue.js';
+import { sumNumbersFromInitialValue } from './sumNumbersFromInitialValue.js';
 const EMPTY_NUMBERS_LIST = [];
 const POSITIVE_NUMBERS_LIST = [1, 2, 3, 4, 5];
 const MIXED_NUMBERS_LIST = [1, -2, 3, -4, 5];

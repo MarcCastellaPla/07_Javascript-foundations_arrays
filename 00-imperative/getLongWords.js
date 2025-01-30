@@ -13,7 +13,7 @@
  * @returns {string[]} An array containing words with length equal or greater than 5.
  */
 
-const getLongWords = function (wordsList) {
+export function getLongWords(wordsList) {
   const result = [];
   for (let i = 0; i < wordsList.length; i++) {
     if (wordsList[i].length >= 5) {
@@ -21,6 +21,4 @@ const getLongWords = function (wordsList) {
     }
   }
   return result;
-};
-
-export default getLongWords;
+}

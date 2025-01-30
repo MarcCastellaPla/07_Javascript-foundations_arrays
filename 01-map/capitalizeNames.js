@@ -12,7 +12,7 @@
  * @returns {string[]} An array of names with the first letter capitalized and the rest in lowercase.
  */
 
-const capitalizeNames = function (namesList) {
+export function capitalizeNames(namesList) {
   const result = namesList.map((name) => {
     const lowercaseName = name.toLowerCase();
     const capitalizedName =
@@ -20,6 +20,4 @@ const capitalizeNames = function (namesList) {
     return capitalizedName;
   });
   return result;
-};
-
-export default capitalizeNames;
+}

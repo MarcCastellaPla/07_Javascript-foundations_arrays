@@ -1,29 +1,64 @@
-const EMPTY_VIPS_LIST = [];
+import { describe, it, expect } from 'vitest';
+import { extractVipsNames } from './extractVipsNames.js';
 
-const SINGLE_VIP_LIST = [{ name: "Foo", age: 80 }];
+describe('Given extractVipsNames', () => {
+  it('When the VIPS array is provided, then the function should return an array of strings with the names of the VIPs', () => {
+    // Arrange
+    const VIPS = [
+      { name: 'Foo', age: 80 },
+      { name: 'Bar', age: 2 },
+      { name: 'Fizz', age: 5 },
+      { name: 'Buzz', age: 16 },
+      { name: 'FizzBuzz', age: 100 },
+    ];
+    const expectedResult = ['Foo', 'Bar', 'Fizz', 'Buzz', 'FizzBuzz'];
 
-const VIPS = [
-  { name: "Foo", age: 80 },
-  { name: "Bar", age: 2 },
-  { name: "Fizz", age: 5 },
-  { name: "Buzz", age: 16 },
-  { name: "FizzBuzz", age: 100 },
-];
+    // Act
+    const result = extractVipsNames(VIPS);
 
-const VIPS_WITH_DIFFERENT_AGES = [
-  { name: "Foo", age: 80 },
-  { name: "Bar", age: 2 },
-  { name: "Fizz", age: 5 },
-  { name: "Buzz", age: 16 },
-  { name: "FizzBuzz", age: 100 },
-];
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 
-describe("extractVipsNames", () => {
-  it.todo("should extract names from VIPS array");
+  it('When an empty array is provided, then the function should return an empty array', () => {
+    //
+    // Arrange
+    const EMPTY_VIPS_LIST = [];
+    const expectedResult = [];
 
-  it.todo("should handle an empty array");
+    // Act
+    const result = extractVipsNames(EMPTY_VIPS_LIST);
 
-  it.todo("should handle an array with one VIP");
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 
-  it.todo("should handle VIPs with different ages");
+  it(' When there is only one element in the array Then the function should return an array with one string', () => {
+    // Arrange
+    const SINGLE_VIP_LIST = [{ name: 'Foo', age: 80 }];
+    const expectedResult = ['Foo'];
+
+    // Act
+    const result = extractVipsNames(SINGLE_VIP_LIST);
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('When there are VIPs with different ages, then the function should return an array of strings with the names of the VIPs', () => {
+    // Arrange
+    const VIPS_WITH_DIFFERENT_AGES = [
+      { name: 'Foo', age: 80 },
+      { name: 'Bar', age: 2 },
+      { name: 'Fizz', age: 5 },
+      { name: 'Buzz', age: 16 },
+      { name: 'FizzBuzz', age: 100 },
+    ];
+    const expectedResult = ['Foo', 'Bar', 'Fizz', 'Buzz', 'FizzBuzz'];
+
+    // Act
+    const result = extractVipsNames(VIPS_WITH_DIFFERENT_AGES);
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 });

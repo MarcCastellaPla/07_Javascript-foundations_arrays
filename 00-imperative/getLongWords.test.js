@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import getLongWords from './getLongWords.js';
+import { getLongWords } from './getLongWords.js';
 
 describe('getLongWords', () => {
   it('Given an array of LANGUAGES, When getLongWords is called, Then it should return words longer than 5 characters', () => {

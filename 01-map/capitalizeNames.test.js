@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import capitalizeNames from './capitalizeNames.js';
+import { capitalizeNames } from './capitalizeNames.js';
 const NAMES = ['john', 'JACOB', 'jinGleHeimer', 'schmidt'];
 const EMPTY_NAMES_LIST = [];
 const CAPITALIZED_NAMES = ['John', 'Jacob', 'Jingleheimer', 'Schmidt'];
