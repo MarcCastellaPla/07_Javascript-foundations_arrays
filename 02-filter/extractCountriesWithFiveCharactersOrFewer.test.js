@@ -1,24 +1,70 @@
-const EMPTY_COUNTRIES_ARRAY = [];
-const COUNTRIES_WITH_NO_SHORT_NAMES = ["United Kingdom", "Portugal", "Greece"];
-const COUNTRIES_WITH_ALL_SHORT_NAMES = ["Italy", "Spain", "Japan"];
-const COUNTRIES_WITH_MIXED_LENGTH = [
-  "United Kingdom",
-  "Italy",
-  "France",
-  "Portugal",
-  "Greece",
-];
+import { describe, it, expect } from 'vitest';
+import { extractCountriesWithFiveCharactersOrFewer } from './extractCountriesWithFiveCharactersOrFewer.js';
 
-describe("extractCountriesWithFiveCharactersOrFewer", () => {
-  it.todo("should return countries with five characters or fewer");
+describe('Given extractCountriesWithFiveCharactersOrFewerOrFewer', () => {
+  it('When the list contains countries with names having mixed lenghts, Then it should return only countries with names having five characters or fewer', () => {
+    // Arrange
+    const COUNTRIES_WITH_MIXED_LENGTH = [
+      'United Kingdom',
+      'Italy',
+      'France',
+      'Portugal',
+      'Greece',
+    ];
+    const expectedResult = ['Italy', 'France', 'Greece'];
 
-  it.todo("should handle an empty array of countries");
+    // Act
+    const result = extractCountriesWithFiveCharactersOrFewer(
+      COUNTRIES_WITH_MIXED_LENGTH,
+    );
 
-  it.todo(
-    "should handle an array with no countries having five characters or fewer"
-  );
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 
-  it.todo(
-    "should handle an array with all countries having five characters or fewer"
-  );
+  it('When the list is empty, Then it should return an empty array', () => {
+    // Arrange
+    const EMPTY_COUNTRIES_ARRAY = [];
+    const expectedResult = [];
+
+    // Act
+    const result = extractCountriesWithFiveCharactersOrFewer(
+      EMPTY_COUNTRIES_ARRAY,
+    );
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('When the list contains countries with names having more than five characters, Then it should return an empty array', () => {
+    // Arrange
+    const COUNTRIES_WITH_NO_SHORT_NAMES = [
+      'United Kingdom',
+      'Portugal',
+      'Greece',
+    ];
+    const expectedResult = [];
+
+    // Act
+    const result = extractCountriesWithFiveCharactersOrFewer(
+      COUNTRIES_WITH_NO_SHORT_NAMES,
+    );
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('When the list contains only countries with names having five characters or fewer, Then it should return the same array', () => {
+    // Arrange
+    const COUNTRIES_WITH_ALL_SHORT_NAMES = ['Italy', 'Spain', 'Japan'];
+    const expectedResult = ['Italy', 'Spain', 'Japan'];
+
+    // Act
+    const result = extractCountriesWithFiveCharactersOrFewer(
+      COUNTRIES_WITH_ALL_SHORT_NAMES,
+    );
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 });
