@@ -16,11 +16,17 @@
 
 export function feedMonkeys(monkeysList, fruit) {
   const result = [];
-  if (fruit === undefined) {
-    return result;
+
+  if (!fruit || typeof fruit !== 'string') {
+    return [];
   }
-  for (let i = 0; i < monkeysList.length; i++) {
-    result.push(monkeysList[i] + fruit);
+
+  for (let index = 0; index < monkeysList.length; index++) {
+    const monkey = monkeysList[index];
+    const monkeyWithFruit = `${monkey}${fruit}`;
+
+    result.push(monkeyWithFruit);
   }
+
   return result;
 }

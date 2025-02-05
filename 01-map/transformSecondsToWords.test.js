@@ -1,15 +1,22 @@
-import { describe, it, expect } from 'vitest';
-import { transformSecondsToWords } from './transformSecondsToWords.js';
+import {
+  describe,
+  it,
+  expect
+} from 'vitest';
+import {
+  transformSecondsToWords
+} from './transformSecondsToWords.js';
 
 describe('Given transformSecondsToWords', () => {
   it('When an array of seconds is provided, then the function should return an array of strings', () => {
     // Arrange
     const SECONDS = [2, 5, 100];
     const expectedResult = ['2', '5', '100'];
+
     // Act
     const result = transformSecondsToWords(SECONDS);
 
-    // Asser
+    // Assert
     expect(result).toEqual(expectedResult);
   });
 
@@ -25,7 +32,7 @@ describe('Given transformSecondsToWords', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('When there is only one element in the array Then the function should return an array with one string', () => {
+  it('When there is only one element in the array, then the function should return an array with one string', () => {
     // Arrange
     const SINGLE_SECOND_LIST = [42];
     const expectedResult = ['42'];
@@ -39,11 +46,11 @@ describe('Given transformSecondsToWords', () => {
 
   it('When there is only one element in the array and it is zero, then the function should return an array with one string', () => {
     // Arrange
-    const SINGLE_SECONDS_LIST_WITH_VALUE_ZERO = [0];
+    const SINGLE_SECOND_LIST_WITH_VALUE_ZERO = [0];
     const expectedResult = ['0'];
 
     // Act
-    const result = transformSecondsToWords(SINGLE_SECONDS_LIST_WITH_VALUE_ZERO);
+    const result = transformSecondsToWords(SINGLE_SECOND_LIST_WITH_VALUE_ZERO);
 
     // Assert
     expect(result).toEqual(expectedResult);

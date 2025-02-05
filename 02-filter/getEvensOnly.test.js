@@ -1,8 +1,14 @@
-import { describe, it, expect } from 'vitest';
-import { getEvensOnly } from './getEvensOnly.js';
+import {
+  describe,
+  it,
+  expect
+} from 'vitest';
+import {
+  getEvensOnly
+} from './getEvensOnly.js';
 
-describe('getEvensOnly', () => {
-  it(' When the list contains numbers, Then it should return only even numbers', () => {
+describe('Given getEvensOnly', () => {
+  it('When the list contains numbers, Then it should return only even numbers', () => {
     // Arrange
     const NUMBERS = [2, 25, 43, 12, 67, 42, 28];
     const expectedResult = [2, 12, 42, 28];
@@ -30,8 +36,10 @@ describe('getEvensOnly', () => {
     // Arrange
     const NUMBERS_LIST_WITHOUT_EVEN_VALUES = [1, 3, 5, 7, 9];
     const expectedResult = [];
+
     // Act
     const result = getEvensOnly(NUMBERS_LIST_WITHOUT_EVEN_VALUES);
+
     // Assert
     expect(result).toEqual(expectedResult);
   });
@@ -55,6 +63,7 @@ describe('getEvensOnly', () => {
 
     // Act
     const result = getEvensOnly(NUMBERS_LIST_WITH_NEGATIVE_VALUES);
+
     // Assert
     expect(result).toEqual(expectedResult);
   });

@@ -13,11 +13,12 @@
  */
 
 export function capitalizeNames(namesList) {
-  const result = namesList.map((name) => {
+  return namesList.map((name) => {
     const lowercaseName = name.toLowerCase();
-    const capitalizedName =
-      lowercaseName.charAt(0).toUpperCase() + lowercaseName.slice(1);
+    const firstLetterofName = lowercaseName.charAt(0).toUpperCase();
+    const restOfName = lowercaseName.slice(1);
+    const capitalizedName = `${firstLetterofName}${restOfName}`;
+
     return capitalizedName;
   });
-  return result;
 }

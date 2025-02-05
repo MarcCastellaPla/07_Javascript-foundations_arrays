@@ -13,9 +13,9 @@
  * @returns {string[]} An array of stringified seconds.
  */
 export function transformSecondsToWords(secondsList) {
-  const result = secondsList.map((second) => {
-    const stringifiedSecond = second.toString();
+  return secondsList.map((second) => {
+    const stringifiedSecond = `${second}`;
+
     return stringifiedSecond;
   });
-  return result;
 }

@@ -16,6 +16,12 @@
  */
 
 export function getLongWords(wordsList) {
-  const result = wordsList.filter((word) => word.length >= 5);
-  return result;
+  const longWords = wordsList.filter((word) => {
+    const wordLength = word.length;
+    const isLongEnough = wordLength >= 5;
+
+    return isLongEnough;
+  });
+
+  return longWords;
 }

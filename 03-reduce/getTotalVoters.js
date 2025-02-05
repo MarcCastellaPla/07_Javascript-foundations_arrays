@@ -28,10 +28,13 @@
  */
 
 export function getTotalVoters(votersList) {
-  return votersList.reduce((acumulator, voter) => {
-    if (voter.hasVoted) {
-      acumulator++;
+  return votersList.reduce((accumulator, voter) => {
+    const hasVoted = voter.hasVoted;
+
+    if (hasVoted) {
+      accumulator++;
     }
-    return acumulator;
-  }, 0); // Initial value set to 0
+
+    return accumulator;
+  }, 0);
 }

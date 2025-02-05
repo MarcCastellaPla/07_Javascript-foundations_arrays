@@ -37,11 +37,8 @@ const VIPS = [
  */
 
 export function extractVipsNames(vipsList) {
-  const vipsNameList = vipsList.map((vip) => {
+  return vipsList.map((vip) => {
     const vipName = vip.name;
     return vipName;
   });
-  return vipsNameList;
 }
-
-export default extractVipsNames;

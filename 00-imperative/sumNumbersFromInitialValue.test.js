@@ -1,5 +1,12 @@
-import { describe, it, expect } from 'vitest';
-import { sumNumbersFromInitialValue } from './sumNumbersFromInitialValue.js';
+import {
+  describe,
+  it,
+  expect
+} from 'vitest';
+import {
+  sumNumbersFromInitialValue
+} from './sumNumbersFromInitialValue.js';
+
 const EMPTY_NUMBERS_LIST = [];
 const POSITIVE_NUMBERS_LIST = [1, 2, 3, 4, 5];
 const MIXED_NUMBERS_LIST = [1, -2, 3, -4, 5];
@@ -9,7 +16,7 @@ const initialAccumulatedValueAsTen = 10;
 const initialAccumulatedValueAsOneHundred = 100;
 
 describe('Given sumNumbersFromInitialValue', () => {
-  it('When the initial value is 0, Then it shoud return the correct sum', () => {
+  it('When the initial value is 0, Then it should return the correct sum', () => {
     // Arrange
     const expectedResult = 0;
 
@@ -23,7 +30,7 @@ describe('Given sumNumbersFromInitialValue', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('When the initial value is 10, Then it shoud return the correct sum', () => {
+  it('When the initial value is 10, Then it should return the correct sum', () => {
     // Arrange
     const expectedResult = 10;
 
@@ -53,8 +60,8 @@ describe('Given sumNumbersFromInitialValue', () => {
 
   it('When the list contains negative numbers, Then it should return the correct sum', () => {
     // Arrange
-    const expectedResult = -15;
     const NEGATIVE_NUMBERS_LIST = [-1, -2, -3, -4, -5];
+    const expectedResult = -15;
 
     // Act
     const result = sumNumbersFromInitialValue(
@@ -65,7 +72,8 @@ describe('Given sumNumbersFromInitialValue', () => {
     // Assert
     expect(result).toEqual(expectedResult);
   });
-  it('when the list contains a mix of positive and negative numbers, Then it should return the correct sum', () => {
+
+  it('When the list contains a mix of positive and negative numbers, Then it should return the correct sum', () => {
     // Arrange
     const expectedResult = 3;
 

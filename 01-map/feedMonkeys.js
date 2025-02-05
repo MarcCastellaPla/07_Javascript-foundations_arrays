@@ -17,14 +17,14 @@
  */
 
 export function feedMonkeys(monkeysList, fruit) {
-  if (fruit == undefined) {
+  if (!fruit || typeof fruit !== 'string') {
     return [];
   }
-  const result = monkeysList.map((monkey) => {
-    monkey += fruit;
-    return monkey;
-  });
-  return result;
-}
 
-export default feedMonkeys;
+  return monkeysList.map((monkey) => {
+    const monkeyName = monkey;
+    const monkeyWithFruit = `${monkeyName}${fruit}`;
+
+    return monkeyWithFruit;
+  });
+}

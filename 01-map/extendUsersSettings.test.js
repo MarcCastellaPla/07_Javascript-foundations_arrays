@@ -1,11 +1,16 @@
-import { describe, it, expect } from 'vitest';
-import { extendUsersSettings } from './extendUsersSettings.js';
+import {
+  describe,
+  it,
+  expect
+} from 'vitest';
+import {
+  extendUsersSettings
+} from './extendUsersSettings.js';
 
 describe('Given extendUsersSettings', () => {
   it('When an array of users is given, Then it should return an array of users with id and isEnabled properties', () => {
     // Arrange
-    const USERS = [
-      {
+    const USERS = [{
         email: 'lindsay.ferguson@reqres.in',
         firstName: 'Lindsay',
         lastName: 'Lawson',
@@ -24,8 +29,8 @@ describe('Given extendUsersSettings', () => {
         avatar: 'https://reqres.in/img/faces/9-image.jpg',
       },
     ];
-    const expectedResult = [
-      {
+
+    const expectedResult = [{
         email: 'lindsay.ferguson@reqres.in',
         firstName: 'Lindsay',
         lastName: 'Lawson',
@@ -50,12 +55,13 @@ describe('Given extendUsersSettings', () => {
         isEnabled: true,
       },
     ];
+
     // Act
     const result = extendUsersSettings(USERS);
 
     // Assert
     expect(result).toEqual(expectedResult);
-  }); // When an array of users is given, Then it should return an array of users with id and isEnabled properties
+  });
 
   it('When an empty array is given, Then it should return an empty array', () => {
     // Arrange

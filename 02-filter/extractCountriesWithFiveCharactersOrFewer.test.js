@@ -1,8 +1,14 @@
-import { describe, it, expect } from 'vitest';
-import { extractCountriesWithFiveCharactersOrFewer } from './extractCountriesWithFiveCharactersOrFewer.js';
+import {
+  describe,
+  it,
+  expect
+} from 'vitest';
+import {
+  extractCountriesWithFiveCharactersOrFewer
+} from './extractCountriesWithFiveCharactersOrFewer.js';
 
-describe('Given extractCountriesWithFiveCharactersOrFewerOrFewer', () => {
-  it('When the list contains countries with names having mixed lenghts, Then it should return only countries with names having five characters or fewer', () => {
+describe('Given extractCountriesWithFiveCharactersOrFewer', () => {
+  it('When the list contains countries with names having mixed lengths, Then it should return only countries with names having five characters or fewer', () => {
     // Arrange
     const COUNTRIES_WITH_MIXED_LENGTH = [
       'United Kingdom',
@@ -11,12 +17,11 @@ describe('Given extractCountriesWithFiveCharactersOrFewerOrFewer', () => {
       'Portugal',
       'Greece',
     ];
+
     const expectedResult = ['Italy'];
 
     // Act
-    const result = extractCountriesWithFiveCharactersOrFewer(
-      COUNTRIES_WITH_MIXED_LENGTH,
-    );
+    const result = extractCountriesWithFiveCharactersOrFewer(COUNTRIES_WITH_MIXED_LENGTH);
 
     // Assert
     expect(result).toEqual(expectedResult);
@@ -28,9 +33,7 @@ describe('Given extractCountriesWithFiveCharactersOrFewerOrFewer', () => {
     const expectedResult = [];
 
     // Act
-    const result = extractCountriesWithFiveCharactersOrFewer(
-      EMPTY_COUNTRIES_ARRAY,
-    );
+    const result = extractCountriesWithFiveCharactersOrFewer(EMPTY_COUNTRIES_ARRAY);
 
     // Assert
     expect(result).toEqual(expectedResult);
@@ -43,12 +46,11 @@ describe('Given extractCountriesWithFiveCharactersOrFewerOrFewer', () => {
       'Portugal',
       'Greece',
     ];
+
     const expectedResult = [];
 
     // Act
-    const result = extractCountriesWithFiveCharactersOrFewer(
-      COUNTRIES_WITH_NO_SHORT_NAMES,
-    );
+    const result = extractCountriesWithFiveCharactersOrFewer(COUNTRIES_WITH_NO_SHORT_NAMES);
 
     // Assert
     expect(result).toEqual(expectedResult);
@@ -60,9 +62,7 @@ describe('Given extractCountriesWithFiveCharactersOrFewerOrFewer', () => {
     const expectedResult = ['Italy', 'Spain', 'Japan'];
 
     // Act
-    const result = extractCountriesWithFiveCharactersOrFewer(
-      COUNTRIES_WITH_ALL_SHORT_NAMES,
-    );
+    const result = extractCountriesWithFiveCharactersOrFewer(COUNTRIES_WITH_ALL_SHORT_NAMES);
 
     // Assert
     expect(result).toEqual(expectedResult);

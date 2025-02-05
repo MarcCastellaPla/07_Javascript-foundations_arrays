@@ -23,9 +23,16 @@
 
 export function createLocalesSettings(localesList) {
   const localesSettings = localesList.reduce((acc, locale, index) => {
+    const id = index;
     const enabled = index === 0;
-    acc[locale] = { id: index, enabled };
+
+    acc[locale] = {
+      id,
+      enabled
+    };
+
     return acc;
   }, {});
+
   return localesSettings;
 }

@@ -14,12 +14,14 @@
  */
 
 export function extractCountriesWithFiveCharactersOrFewer(countriesList) {
-  const CountriesWithFiveCharactersOrFewer = countriesList.filter((country) => {
-    const threshold = 5;
-    let countryLength = country.length;
-    if (countryLength <= threshold) {
-      return countryLength;
-    }
+  const threshold = 5;
+
+  const countriesWithFiveCharactersOrFewer = countriesList.filter((country) => {
+    const countryLength = country.length;
+    const isShortEnough = countryLength <= threshold;
+
+    return isShortEnough;
   });
-  return CountriesWithFiveCharactersOrFewer;
+
+  return countriesWithFiveCharactersOrFewer;
 }

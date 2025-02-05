@@ -1,8 +1,14 @@
-import { describe, it, expect } from 'vitest';
-import { getLongWords } from './getLongWords.js';
+import {
+  describe,
+  it,
+  expect
+} from 'vitest';
+import {
+  getLongWords
+} from './getLongWords.js';
 
-describe('getLongWords', () => {
-  it('Given an array of LANGUAGES, When getLongWords is called, Then it should return words longer than 5 characters', () => {
+describe('Given getLongWords', () => {
+  it('When getLongWords is called with an array of words, Then it should return words longer than 5 characters', () => {
     // Arrange
     const LANGUAGES = ['Java', 'C++', 'JavaScript', 'C#', 'TypeScript'];
     const expectedResult = ['JavaScript', 'TypeScript'];
@@ -14,7 +20,7 @@ describe('getLongWords', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('Given an array of BEATLES, When getLongWords is called, Then it should return words longer than 5 characters', () => {
+  it('When getLongWords is called with a different array of words, Then it should return words longer than 5 characters', () => {
     // Arrange
     const BEATLES = ['John', 'George', 'Paul', 'Ringo'];
     const expectedResult = ['George', 'Ringo'];
@@ -26,7 +32,7 @@ describe('getLongWords', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('Given an array of SHORT_WORDS, When getLongWords is called, Then it should return an empty array if no words are long enough', () => {
+  it('When getLongWords is called with an array of short words, Then it should return an empty array if no words are long enough', () => {
     // Arrange
     const SHORT_WORDS = ['a', 'bb', 'ccc', 'dddd'];
     const expectedResult = [];
@@ -38,7 +44,7 @@ describe('getLongWords', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('Given an array of ALL_LONG_WORDS, When getLongWords is called, Then it should return the same array if all words are long enough', () => {
+  it('When getLongWords is called with an array of long words, Then it should return the same array if all words are long enough', () => {
     // Arrange
     const ALL_LONG_WORDS = ['JavaScript', 'TypeScript', 'Python'];
     const expectedResult = ['JavaScript', 'TypeScript', 'Python'];
@@ -50,7 +56,7 @@ describe('getLongWords', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('Given an EMPTY_ARRAY, When getLongWords is called, Then it should handle an empty input array and return an empty array', () => {
+  it('When getLongWords is called with an empty array, Then it should handle an empty input array and return an empty array', () => {
     // Arrange
     const EMPTY_ARRAY = [];
     const expectedResult = [];
@@ -62,7 +68,7 @@ describe('getLongWords', () => {
     expect(result).toEqual(expectedResult);
   });
 
-  it('Given an array of MIXED_LENGTH_WORDS, When getLongWords is called, Then it should return only the long words from the array', () => {
+  it('When getLongWords is called with an array of words with mixed length, Then it should return only the long words from the array', () => {
     // Arrange
     const MIXED_LENGTH_WORDS = ['short', 'tiny', 'adequate', 'sufficient'];
     const expectedResult = ['short', 'adequate', 'sufficient'];

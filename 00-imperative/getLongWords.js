@@ -15,10 +15,14 @@
 
 export function getLongWords(wordsList) {
   const result = [];
-  for (let i = 0; i < wordsList.length; i++) {
-    if (wordsList[i].length >= 5) {
-      result.push(wordsList[i]);
+
+  for (let index = 0; index < wordsList.length; index++) {
+    const word = wordsList[index];
+
+    if (word.length >= 5) {
+      result.push(word);
     }
   }
+
   return result;
 }

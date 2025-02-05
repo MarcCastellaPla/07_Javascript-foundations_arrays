@@ -37,7 +37,10 @@
 
 export function customersWhoBelongToMembership(customersList) {
   const membersList = customersList.filter((customer) => {
-    return customer.isMember;
+    const isMember = customer.isMember;
+
+    return isMember;
   });
+
   return membersList;
 }
