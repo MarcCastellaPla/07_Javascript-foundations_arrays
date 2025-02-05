@@ -11,7 +11,7 @@ describe('Given extractCountriesWithFiveCharactersOrFewerOrFewer', () => {
       'Portugal',
       'Greece',
     ];
-    const expectedResult = ['Italy', 'France', 'Greece'];
+    const expectedResult = ['Italy'];
 
     // Act
     const result = extractCountriesWithFiveCharactersOrFewer(

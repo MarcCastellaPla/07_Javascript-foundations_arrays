@@ -12,3 +12,12 @@
  * @param {number[]} numbersList - The array of numbers to filter.
  * @returns {number[]} An array containing only the even numbers from the input array.
  */
+
+export function getEvensOnly(numbersList) {
+  const evenNumbers = numbersList.filter((number) => {
+    if (number % 2 === 0) {
+      return number;
+    }
+  });
+  return evenNumbers;
+}

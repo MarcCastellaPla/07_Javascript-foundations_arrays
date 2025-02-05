@@ -23,7 +23,3 @@ export function extractCountriesWithFiveCharactersOrFewer(countriesList) {
   });
   return CountriesWithFiveCharactersOrFewer;
 }
-
-// const collection = ['Ezio', 'Auditore', 'Edward', 'Kenway'];
-
-// extractCountriesWithFiveCharactersOrFewer(collection);

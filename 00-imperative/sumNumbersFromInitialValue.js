@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /**
  * Given 'NUMBERS' array, define function 'sumNumbersFromInitialValue' to return its sum value depending on initial value.
  * use for() instruction
