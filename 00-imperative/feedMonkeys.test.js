@@ -1,17 +1,69 @@
-const MONKEYS_LIST = ["🐒", "🦍", "🦧"];
-const apple = "🍎";
-const banana = "🍌";
-const grape = "🍇";
-const specialCharacters = "🍉🍇";
+import {
+  describe,
+  it,
+  expect
+} from 'vitest';
+import {
+  feedMonkeys
+} from './feedMonkeys.js';
 
-describe("feedMonkeys", () => {
-  it.todo("should feed monkeys with bananas");
+const MONKEYS_LIST = ['🐒', '🦍', '🦧'];
 
-  it.todo("should feed monkeys with apples");
+describe('Given feedMonkeys', () => {
+  it('When the monkeys are fed with bananas, then all monkeys should have a banana', () => {
+    // Arrange
+    const banana = '🍌';
+    const expectedResult = ['🐒🍌', '🦍🍌', '🦧🍌'];
 
-  it.todo("should feed monkeys with grapes");
+    // Act
+    const result = feedMonkeys(MONKEYS_LIST, banana);
 
-  it.todo("should return an empty array if no fruit is provided");
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 
-  it.todo("should handle feeding monkeys with special characters");
+  it('When the monkeys are fed with apples, then all monkeys should have an apple', () => {
+    // Arrange
+    const apple = '🍎';
+    const expectedResult = ['🐒🍎', '🦍🍎', '🦧🍎'];
+
+    // Act
+    const result = feedMonkeys(MONKEYS_LIST, apple);
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('When the monkeys are fed with grapes, then all monkeys should have a grape', () => {
+    // Arrange
+    const grape = '🍇';
+    const expectedResult = ['🐒🍇', '🦍🍇', '🦧🍇'];
+
+    // Act
+    const result = feedMonkeys(MONKEYS_LIST, grape);
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('When no fruit is provided to the monkeys, then the function should return an empty array', () => {
+    // Act
+    const result = feedMonkeys(MONKEYS_LIST, '');
+    const expectedResult = [];
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
+
+  it('When the monkeys are fed with special characters as fruit, then the function should handle it without errors', () => {
+    // Arrange
+    const specialCharacters = '🍉🍇';
+    const expectedResult = ['🐒🍉🍇', '🦍🍉🍇', '🦧🍉🍇'];
+
+    // Act
+    const result = feedMonkeys(MONKEYS_LIST, specialCharacters);
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 });

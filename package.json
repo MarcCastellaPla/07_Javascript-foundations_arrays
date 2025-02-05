@@ -1,0 +1,38 @@
+{
+  "name": "07_javascript-foundations_arrays",
+  "version": "1.0.0",
+  "description": "Exercises to practice imperative and functional programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcCastellaPla/06_Node-foundations__tdd-lint.git"
+  },
+  "keywords": [
+    "imperative",
+    "programming",
+    "functional",
+    "programming",
+    "jsdocs"
+  ],
+  "author": "Marc Castella Pla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcCastellaPla/07_Javascript-foundations_arrays.git"
+  },
+  "homepage": "https://github.com/MarcCastellaPla/07_Javascript-foundations_arrays.git#readme",
+  "devDependencies": {
+    "@eslint/js": "9.19.0",
+    "eslint": "9.19.0",
+    "eslint-config-prettier": "10.0.1",
+    "eslint-plugin-prettier": "5.2.3",
+    "globals": "15.14.0",
+    "prettier": "3.4.2",
+    "vitest": "3.0.4"
+  }
+}
